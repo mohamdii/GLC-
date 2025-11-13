@@ -1,8 +1,12 @@
-﻿@inherits LayoutComponentBase
-
+﻿@using GLCTest.Interfaces
+@inherits LayoutComponentBase
+@inject IAuthService AuthService
 <div class="page">
     <div class="sidebar">
-        <NavMenu />
+        @if (AuthService.IsAuthenticated)
+        {
+            <NavMenu />
+        }
     </div>
 
     <main>
