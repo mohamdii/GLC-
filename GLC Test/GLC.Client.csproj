@@ -9,6 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\GLC.Infrastructure\GLC.Infrastructure.csproj" />
     <ProjectReference Include="..\GLC.Shared\GLC.Shared.csproj" />
   </ItemGroup>
 
