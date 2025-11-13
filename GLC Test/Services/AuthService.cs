@@ -1,6 +1,6 @@
-﻿namespace GLC-Test.Services
-{
-    public class AuthService
+﻿namespace GLCTest.Services;
+
+public class AuthService
 {
 }
-}
+

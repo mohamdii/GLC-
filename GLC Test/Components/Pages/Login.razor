@@ -1,4 +1,5 @@
 ﻿@page "/login"
+@using GLC.Shared.DTOs
 @inject IAuthService AuthService
 @inject NavigationManager Navigation
 
@@ -41,7 +42,7 @@
 </EditForm>
 
 @code {
-    private LoginModel loginModel = new();
+    private LoginRequestDto loginModel = new();
     private bool isLoading = false;
     private string errorMessage = string.Empty;
 

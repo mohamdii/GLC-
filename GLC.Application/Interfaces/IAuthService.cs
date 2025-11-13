@@ -1,4 +1,4 @@
-﻿using GLC.Application.DTOs;
+﻿using GLC.Shared.DTOs;
 
 namespace GLC.Application.Interfaces
 {

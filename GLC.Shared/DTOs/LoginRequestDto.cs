@@ -1,4 +1,4 @@
-﻿namespace GLC.Application.DTOs
+﻿namespace GLC.Shared.DTOs
 {
     public class LoginRequestDto
     {
