@@ -1,8 +1,12 @@
 // Program.cs
+using GLC.Application.Interfaces;
+using GLC.Application.Services;
 using GLC.Domain.Interfaces;
-using GLC.Infrastructure.ApplicationDbContext;
+using GLC.Infrastructure.ApplicationDb;
 using GLC.Infrastructure.UnitOfWork;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using Serilog;
 using System.Text;
@@ -64,8 +68,7 @@ builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 
 // Services
 builder.Services.AddScoped<IAuthService, AuthService>();
-builder.Services.AddScoped<IEmployeeService, EmployeeService>();
-builder.Services.AddScoped<ILeaveRequestService, LeaveRequestService>();
+
 
 // JWT Authentication
 var jwtSettings = builder.Configuration.GetSection("Jwt");

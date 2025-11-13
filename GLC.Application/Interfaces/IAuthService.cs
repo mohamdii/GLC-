@@ -1,4 +1,6 @@
-﻿namespace GLC.Application.Interfaces
+﻿using GLC.Application.DTOs;
+
+namespace GLC.Application.Interfaces
 {
 
     public interface IAuthService

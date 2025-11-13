@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using GLC.Infrastructure.ApplicationDb;
+using Microsoft.EntityFrameworkCore;
 
 namespace GLC.Infrastructure.Repositories
 {

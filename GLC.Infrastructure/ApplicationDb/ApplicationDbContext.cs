@@ -2,7 +2,7 @@
 using GLC.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 
-namespace GLC.Infrastructure.ApplicationDbContext
+namespace GLC.Infrastructure.ApplicationDb
 {
     public class ApplicationDbContext : DbContext
     {

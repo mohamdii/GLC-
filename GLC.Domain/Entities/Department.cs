@@ -1,9 +1,11 @@
-﻿namespace GLC.Domain.Entities
-{
-    public class Department
-    {
-        public int Id { get; set; }
-        public string Name { get; set; } = string.Empty;
+﻿using CompanyPortal.Domain.Entities;
 
-        public virtual ICollection<Employee> Employees { get; set; } = new List<Employee>();
-    }
+namespace GLC.Domain.Entities;
+
+public class Department
+{
+    public int Id { get; set; }
+    public string Name { get; set; } = string.Empty;
+
+    public virtual ICollection<Employee> Employees { get; set; } = new List<Employee>();
+}

@@ -1,5 +1,4 @@
 ﻿using AutoMapper;
-using GLC.Domain.Entities;
 
 namespace GLC.Application.AutoMapper
 {
@@ -7,9 +6,9 @@ namespace GLC.Application.AutoMapper
     {
         public MappingProfile()
         {
-            CreateMap<User, UserDto>().ReverseMap();
+            //CreateMap<User, UserDto>().ReverseMap();
 
-            CreateMap<Product, ProductDto>().ReverseMap();
+            //CreateMap<Product, ProductDto>().ReverseMap();
         }
     }
 }

@@ -1,7 +1,10 @@
-﻿using GLC.Domain.Entities;
+﻿using GLC.Application.DTOs;
+using GLC.Application.Interfaces;
+using GLC.Domain.Entities;
 using GLC.Domain.Interfaces;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
+using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
 
