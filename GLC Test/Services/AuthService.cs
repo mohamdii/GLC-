@@ -5,34 +5,35 @@ namespace GLCTest.Services;
 
 public class AuthService : IAuthService
 {
-    public bool IsAuthenticated { get; private set; }
-
     private readonly HttpClient _httpClient;
+    private readonly CustomAuthenticationStateProvider _authStateProvider;
 
-    public AuthService(IHttpClientFactory httpClientFactory)
+    public AuthService(IHttpClientFactory httpClientFactory, CustomAuthenticationStateProvider authStateProvider)
     {
         _httpClient = httpClientFactory.CreateClient();
         _httpClient.BaseAddress = new Uri("https://localhost:7136");
+        _authStateProvider = authStateProvider;
     }
+
+    public bool IsAuthenticated { get; private set; }
 
     public async Task<bool> LoginAsync(LoginRequestDto request)
     {
-        var loginEndpoint = "api/login";
-
         try
         {
-            var response = await _httpClient.PostAsJsonAsync(loginEndpoint, request);
+            var response = await _httpClient.PostAsJsonAsync("api/login", request);
 
             if (response.IsSuccessStatusCode)
             {
                 IsAuthenticated = true;
+
+                _authStateProvider.MarkUserAsAuthenticated(request.Username);
+
                 return true;
             }
-            else
-            {
-                IsAuthenticated = false;
-                return false;
-            }
+
+            IsAuthenticated = false;
+            return false;
         }
         catch
         {
@@ -44,6 +45,9 @@ public class AuthService : IAuthService
     public Task LogoutAsync()
     {
         IsAuthenticated = false;
+
+        _authStateProvider.MarkUserAsLoggedOut();
+
         return Task.CompletedTask;
     }
 }
